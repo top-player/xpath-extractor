@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "XPath获取器",
+  "version": "2.0",
+  "description": "智能XPath生成工具,右键点击页面元素,获取其精简的相对 XPath 路径,并自动复制到剪贴板。",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/utils/utils.js",
+        "src/strategies/base-strategy.js",
+        "src/strategies/text-strategy.js",
+        "src/strategies/container-context-strategy.js",
+        "src/strategies/anchor-strategy.js",
+        "src/strategies/attribute-strategy.js",
+        "src/strategies/relative-strategy.js",
+        "src/strategies/shadow-dom-strategy.js",
+        "src/strategies/svg-strategy.js",
+        "src/core/strategy-manager.js",
+        "src/core/element-analyzer.js",
+        "src/core/xpath-generator.js",
+        "src/core/notification-system.js",
+        "src/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

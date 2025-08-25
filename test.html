@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPath提取器 - AI功能测试页面</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            border: 2px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .test-element {
+            background: #f0f8ff;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🤖 XPath提取器 AI功能测试</h1>
+    
+    <div class="test-section">
+        <h2>🎆 XPath生成优化说明</h2>
+        <div style="background: #e8f5e8; padding: 15px; border-radius: 5px; border-left: 4px solid #4CAF50;">
+            <p><strong>新的AI提示词优化后，会生成更简洁的XPath：</strong></p>
+            <ul>
+                <li><strong>优先使用文本</strong>：<code>//a[text()='学情']</code></li>
+                <li><strong>优先使用ID</strong>：<code>//button[@id='submit']</code></li>
+                <li><strong>避免凗余路径</strong>：不再生成过长的嵌套结构</li>
+                <li><strong>自动优化</strong>：移除不必要的位置选择器和凗余路径</li>
+                <li><strong>提示框优化</strong>：AI加载时显示蓝绿色提示框（而非红色）</li>
+            </ul>
+            <p><code>temperature</code>降低至<code>0.05</code>，<code>max_tokens</code>减少至<code>100</code>，获得更一致的简洁结果。</p>
+        </div>
+        
+        <h3>测试对比</h3>
+        <div style="display: flex; gap: 20px;">
+            <div style="flex: 1; background: #fff3cd; padding: 15px; border-radius: 5px;">
+                <h4>优化前（又臭又长）</h4>
+                <code style="word-break: break-all; background: #f8f9fa; padding: 5px; display: block;">
+                    //nav[@class='nav-bar']//div[@class='nav-list']//div[@class='nav-item'][last()]//a[text()='学情']
+                </code>
+            </div>
+            <div style="flex: 1; background: #d1ecf1; padding: 15px; border-radius: 5px;">
+                <h4>优化后（简洁稳定）</h4>
+                <code style="word-break: break-all; background: #f8f9fa; padding: 5px; display: block;">
+                    //a[text()='学情']
+                </code>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>🎯 测试元素</h2>
+        <button id="test-btn-1" class="button" data-action="test">测试按钮 1</button>
+        <p>右键点击此按钮，选择"🤖 AI辅助提取XPath"</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>测试元素 2: 表单输入</h2>
+        <div class="form-group">
+            <label for="username">用户名:</label>
+            <input type="text" id="username" name="username" placeholder="请输入用户名">
+        </div>
+        <p>右键点击输入框，测试AI提取</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>测试元素 3: 复杂结构</h2>
+        <div class="test-element">
+            <div class="header">
+                <h3>产品标题</h3>
+                <span class="price" data-price="99.99">¥99.99</span>
+            </div>
+            <div class="actions">
+                <button class="button" data-product-id="123">加入购物车</button>
+                <button class="button" data-action="favorite">收藏</button>
+            </div>
+        </div>
+        <p>右键点击不同元素，测试AI在复杂DOM结构中的表现</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>🔧 调试指南</h2>
+        <ol>
+            <li><strong>首先确保AI已配置</strong>：右键扩展图标 → 选项 → 配置AI参数</li>
+            <li><strong>打开开发者工具</strong>：按F12打开控制台</li>
+            <li><strong>观察日志</strong>：在控制台中查看以下信息：
+                <ul>
+                    <li><code>generateAndCopyXPath 被调用</code> - 确认函数被调用</li>
+                    <li><code>AI策略开始生成XPath</code> - 确认AI策略启动</li>
+                    <li><code>AI配置加载结果</code> - 查看配置状态</li>
+                    <li><code>开始调用AI生成XPath</code> - 确认AI请求发送</li>
+                </ul>
+            </li>
+            <li><strong>检查网络</strong>：在网络选项卡中查看是否有AI API请求</li>
+            <li><strong>测试顺序</strong>：
+                <ol>
+                    <li>先测试传统模式（"复制相对XPath"）确保基础功能正常</li>
+                    <li>再测试AI模式（"🤖 AI辅助提取XPath"）</li>
+                </ol>
+            </li>
+        </ol>
+        
+        <h3>常见问题排查</h3>
+        <ul>
+            <li><strong>没有调用AI</strong>：检查配置是否完整（API Key、Base URL、Model）</li>
+            <li><strong>AI请求超时</strong>：
+                <ul>
+                    <li>检查网络连接是否稳定</li>
+                    <li>确认Base URL是否正确（如果使用代理服务）</li>
+                    <li>检查API Key是否有效且有足够额度</li>
+                    <li>尝试切换到更快的模型（如gpt-3.5-turbo）</li>
+                    <li>检查是否需要使用VPN或代理</li>
+                </ul>
+            </li>
+            <li><strong>请求失败</strong>：检查API Key是否有效，网络是否正常</li>
+            <li><strong>脚本注入失败</strong>：刷新页面后重试</li>
+        </ul>
+        
+        <h3>🔍 超时问题特别说明</h3>
+        <div style="background: #fff3cd; padding: 15px; border-radius: 5px; border-left: 4px solid #ffc107;">
+            <p><strong>如果遇到“AI请求超时”错误：</strong></p>
+            <ol>
+                <li><strong>检查网络</strong>：确保能够访问您配置的AI服务</li>
+                <li><strong>检查Base URL</strong>：
+                    <ul>
+                        <li>OpenAI官方: <code>https://api.openai.com/v1</code></li>
+                        <li>国内代理: 检查代理服务是否正常</li>
+                        <li>Claude: 使用相应的Anthropic API地址</li>
+                    </ul>
+                </li>
+                <li><strong>尝试更快的模型</strong>：
+                    <ul>
+                        <li><code>gpt-3.5-turbo</code> (最快)</li>
+                        <li><code>gpt-4</code> (较慢但更精确)</li>
+                    </ul>
+                </li>
+                <li><strong>检查API状态</strong>：在选项页面点击“测试连接”</li>
+                <li><strong>备用方案</strong>：使用传统模式（右键“复制相对XPath”）</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // 添加一些交互功能用于测试
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    console.log('按钮被点击:', this.textContent);
+                });
+            });
+            
+            console.log('测试页面已加载，可以开始测试XPath提取功能');
+        });
+    </script>
+</body>
+</html>

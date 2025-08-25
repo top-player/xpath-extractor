@@ -143,21 +143,14 @@
 
             <div class="form-group">
                 <label for="model">模型名称</label>
-                <input type="text" id="model" name="model" placeholder="gpt-3.5-turbo">
-                <div class="ai-models">
-                    <button type="button" class="model-btn" data-model="gpt-3.5-turbo">GPT-3.5 Turbo</button>
-                    <button type="button" class="model-btn" data-model="gpt-4">GPT-4</button>
-                    <button type="button" class="model-btn" data-model="gpt-4-turbo">GPT-4 Turbo</button>
-                    <button type="button" class="model-btn" data-model="claude-3-sonnet">Claude-3 Sonnet</button>
-                    <button type="button" class="model-btn" data-model="claude-3-haiku">Claude-3 Haiku</button>
-                </div>
-                <div class="help-text">选择或输入要使用的AI模型名称</div>
+                <input type="text" id="model" name="model" placeholder="gpt-4o">
+                <div class="help-text">输入要使用的AI模型名称</div>
             </div>
 
             <div class="form-group">
                 <label for="temperature">Temperature</label>
                 <input type="number" id="temperature" name="temperature" min="0" max="2" step="0.1" value="0.1">
-                <div class="help-text">控制输出的随机性，0-2之间，推荐0.1以获得稳定结果</div>
+                <div class="help-text">控制输出的随机性，0-2之间，推荐0.4以获得稳定结果</div>
             </div>
 
             <div class="button-group">

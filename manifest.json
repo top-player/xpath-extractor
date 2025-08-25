@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "XPath获取器",
-  "version": "2.0",
+  "version": "3.0",
   "description": "智能XPath生成工具,右键点击页面元素,获取其精简的相对 XPath 路径,并自动复制到剪贴板。",
   "permissions": [
     "contextMenus",
